@@ -68,6 +68,12 @@
 \newlength{\intraProjectTitleSep}
 \setlength{\intraProjectTitleSep}{0.4em} % <--- 在此调整标题和描述的距离
 \newcommand{\titlebreak}{\\[\intraProjectTitleSep]}
+\newcommand{\paperinfo}[4]{%
+    \par\nobreak
+    \noindent\hfill
+    \mbox{#1\quad #2\quad #3\quad #4}%
+    \par\vspace{\intraProjectTitleSep}
+}
 
 % --- 用于控制【项目描述】与下方【要点列表】的距离 ---
 \newlength{\intraProjectListTopSep}
@@ -111,14 +117,20 @@
 
 % --- 第一个项目 ---
 % 将标题行末尾的 \\ 替换为 \titlebreak 命令
-{VisualGradient:Training free GUI Agent Visual Feedback and Structural Error Correction Framework} \hfill --CVPR 2027 预投稿 共同第一作者 2026.08 -- 2026.09 \titlebreak
+{VisualGradient: Training-free GUI Agent Visual Feedback and
+Structural Error Correction Framework}
+\paperinfo{CVPR 2027}{预投稿}{共同第一作者}{2026.08--2026.09}
 系统分析 GUI Agent 执行过程中的细粒度失败，揭示不同错误真正需要哪些信息才能被有效纠正。基于这些分析，我们定义 VisualGradient ———— 一种结构化反馈信号，将终局失败转化为面向归因节点的局部视觉修复目标，并以此为核心构建免训练的测试时修复框架，使额外计算能够聚焦于具体失败状态及其受影响部分。
 
-{Living-Harness Is an Interactive-Agent Evolver} \hfill --AAAI 2027在投 第二作者 2026.05 -- 2026.07 \titlebreak
+\projectsep
+
+{Living-Harness Is an Interactive-Agent Evolver}
+\paperinfo{AAAI 2027}{在投}{第二作者}{2026.05--2026.07}
 提出 Living-Harness 自进化 Agent Harness，通过 rollout–evaluate–update 机制将历史交互中的失败与评测反馈转化为可持续积累的过程性修复，解决传统 Reflection/Memory 方法难以将单次纠错固化到后续任务执行流程的问题。
 设计 Evolution-SOP + Episodic Memory + State Graph 的结构化演化机制：从完整 trajectory 中提取触发条件、失败模式与恢复动作，并进一步更新状态节点、修复边和转移规则；采用 evidence/scope/constraint 等约束实现 bounded harness evolution，同时保持基础模型、工具与原始上下文冻结。
 
-{Don’t Guess, Ask Wisely: Benchmarking and Training Proactive Elicitation in Open-Domain LLM Conversations} \hfill --EMNLP 2026 main 第三作者 2026.04 \titlebreak
+{Don’t Guess, Ask Wisely: Benchmarking and Training Proactive Elicitation in Open-Domain LLM Conversations}
+\paperinfo{EMNLP 2026}{main Accepted}{第三作者}{2026.04}
 研究开放域 LLM 对话中的 Proactive Elicitation：针对用户意图模糊和关键约束缺失的问题，构建基于真实用户查询的 VagueBench评测模型何时以及如何主动澄清需求，并基于此通过离线强化学习方法使模型在模糊查询上的主动询问率大幅提升。
 
 \section{\makebox[\widthof{\faCogs}][c]{\color{CVBlue}\faCogs}\ 技术栈}
